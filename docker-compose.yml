@@ -1,0 +1,32 @@
+version: '2.1'
+
+volumes:
+    chdb_data: {}
+
+services:
+
+  chdb-server:
+    image: ghcr.io/chdb-io/chdb-server:latest
+    container_name: chdb-server
+    restart: unless-stopped
+    expose:
+      - 8123
+    volumes:
+      - .chdb_data:/app/.chdb_data
+
+  qryn:
+    image: qxip/qryn:latest
+    container_name: qryn-chdb
+    restart: unless-stopped
+    expose:
+      - 3100
+    ports:
+      - "3100:3100"
+    environment:
+      - CLICKHOUSE_SERVER=chdb-server
+      - CLICKHOUSE_AUTH="qryn:demo"
+      - CLICKHOUSE_PORT=8123
+      - LOG_LEVEL=debug
+      - NODE_OPTIONS="--max-old-space-size=4096"
+    depends_on:
+       - chdb-server
