@@ -25,4 +25,4 @@ curl -i -XPOST -H "Content-Type: application/json" http://localhost:3100/loki/ap
 
 Find your test log using `qryn-view`
 
-![image](https://github.com/metrico/qryn-chdb/assets/1423657/d05e0442-08de-486c-85de-e3d69b87716c)
+<img src="https://github.com/metrico/qryn-chdb/assets/1423657/d05e0442-08de-486c-85de-e3d69b87716c" width=400 >
