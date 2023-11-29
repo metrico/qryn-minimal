@@ -4,7 +4,9 @@
 
 > The lightest, most portable and powerful observability combo ever
 
-#### ⭐ Ingredients
+<br>
+
+### ⭐ Ingredients
 - **qryn**: _polyglot, lighweight, multi-standard drop-in observability framework for Logs, Metrics and Traces_
 - **chdb**: _embedded SQL OLAP Engine for serverless functions powered by and compatible with ClickHouse_
 
