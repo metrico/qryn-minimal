@@ -15,6 +15,7 @@
 ### 👉 Launch
 Spin up qryn w/ chdb storage
 ```
+docker compose pull
 docker compose up -d
 ```
 
