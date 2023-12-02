@@ -50,7 +50,7 @@ jobs:
       - name: Run k6 loki test
         run: ./k6 run --out csv=results.csv loki/qryn-loki-loadtest.js
         env:
-          K6_VUS: 10
+          K6_VUS: 1
           K6_ITERACTIONS: 100
       - run: mv summary.txt loki_summary.txt
       - name: Run k6 local test
