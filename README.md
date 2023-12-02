@@ -17,7 +17,7 @@
 
 ##### ⚠️ This bundle is experimental and will use up all the reosources you feed it. Proceed from the bottom up.
 
-Spin up qryn w/ chdb storage
+Spin up qryn w/ chdb storage using `docker compose`
 ```
 docker compose pull
 docker compose up -d
