@@ -47,7 +47,7 @@ jobs:
         run: |
           wget https://github.com/metrico/qryn-bench/releases/download/latest/k6-tracing -O k6-tracing
           chmod +x k6-tracing
-      - name: Wait for API
+      - name: Wait for Loki API
         uses: mydea/action-wait-for-api@v1
         with:
           url: "http://localhost:3100/loki/api/v1/label"
@@ -60,7 +60,14 @@ jobs:
           K6_VUS: 1
           K6_ITERACTIONS: 10
       - run: mv summary.txt loki_summary.txt
-      - name: Run k6 local test
+      - name: Wait for Prom API
+        uses: mydea/action-wait-for-api@v1
+        with:
+          url: "http://localhost:3100/api/v1/query"
+          expected-response-field: "status"
+          expected-response-field-value: "success"
+          timeout: 30
+      - name: Run k6 prometheus test
         run: ./k6 run --out csv=results.csv prometheus/qryn-loadtest.js 
         env:
           K6_WRITE_HOSTNAME: "localhost:3100"
@@ -72,6 +79,10 @@ jobs:
           K6_SCRAPE_INTERVAL_SECONDS: 30
           RAMP_UP_MIN: 0
       - run: mv summary.txt prom_summary.txt
+      - name: Wait for Tempo API
+        uses: mydea/action-wait-for-api@v1
+        with:
+          url: "http://localhost:3100/api/search/tags"
       - name: Run k6 tempo test
         run: ./k6-tracing run --out csv=results.csv tempo/qryn-tempo-template.js
         env:
