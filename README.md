@@ -10,14 +10,25 @@
 - **qryn**: _polyglot, lighweight, multi-standard drop-in observability framework for Logs, Metrics and Traces_
 - **chdb**: _embedded SQL OLAP Engine for serverless functions powered by and compatible with ClickHouse_
 
+
 <br>
 
 ### 👉 Launch
+
+##### ⚠️ This bundle is experimental and will use up all the reosources you feed it. Proceed from the bottom up.
+
 Spin up qryn w/ chdb storage
 ```
 docker compose pull
 docker compose up -d
 ```
+
+| app | port |
+|---|---|
+| qryn | 3100 |
+| chdb | 8123 |
+
+<br>
 
 ### 🔎 Test
 Ingest a sample log line using `curl`
