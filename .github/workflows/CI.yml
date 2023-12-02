@@ -23,6 +23,8 @@ jobs:
         image: "${{ github.event.inputs.clickhouse_image || 'ghcr.io/chdb-io/chdb-server' }}:${{ github.event.inputs.clickhouse_tag || 'latest' }}"
         ports:
           - 8123:8123
+        env:
+          PORT: 8123
     steps:
     - uses: actions/checkout@v4
       with:
