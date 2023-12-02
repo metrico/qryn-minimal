@@ -24,12 +24,12 @@ jobs:
         env:
           PORT: 8123
       qryn:
-        image:  "qxip/qryn:${{ github.event.inputs.qryn_tag || 'latest' }}"
+        image:  "ghcr.io/metrico/qryn:${{ github.event.inputs.qryn_tag || 'latest' }}"
         ports:
           - 3100:3100
         env:
           CLICKHOUSE_SERVER: clickhouse
-    
+          CLICKHOUSE_AUTH: "qryn:qryn"    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -95,3 +95,8 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Tempo Test" >> $GITHUB_STEP_SUMMARY
           cat tempo_summary.txt >> $GITHUB_STEP_SUMMARY
+
+      - name: Pull Docker logs
+        run: |
+         docker logs -f "${{ job.services.clickhouse.id }}"
+         docker logs -f "${{ job.services.qryn.id }}"
