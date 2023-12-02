@@ -13,6 +13,8 @@ services:
       - 8123
     volumes:
       - chdb_data:/app/.chdb_data
+    environment:
+      - PORT=8123
     deploy:
       resources:
         limits:
