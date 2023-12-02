@@ -11,6 +11,9 @@ on:
       clickhouse_tag:
         description: 'latest'
         required: false
+      qryn_tag:
+        description: 'latest'
+        required: false
 
 jobs:
   build:
@@ -25,6 +28,12 @@ jobs:
           - 8123:8123
         env:
           PORT: 8123
+      qryn:
+        image: "metrico/qryn:${{ github.event.inputs.qryn_tag || 'latest' }}"
+        ports:
+          - 3100:3100
+        env:
+          CLICKHOUSE_AUTH: "a:b"
     steps:
     - uses: actions/checkout@v4
       with:
@@ -46,4 +55,4 @@ jobs:
         CLOKI_EXT_URL: 127.0.0.1:3100
         QRYN_LOGIN: a
         QRYN_PASSWORD: b
-      run: node qryn.mjs >/dev/stdout & npm run test --forceExit
+      run: npm run test --forceExit
