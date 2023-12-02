@@ -66,9 +66,10 @@ jobs:
           K6_WRITE_HOSTNAME: "localhost:3100"
           K6_READ_HOSTNAME: "localhost:3100"
           K6_WRITE_REQUEST_RATE: 1
-          K6_WRITE_SERIES_PER_REQUEST: 10
+          K6_WRITE_SERIES_PER_REQUEST: 1
           K6_READ_REQUEST_RATE: 1
           K6_DURATION_MIN: 1
+          K6_SCRAPE_INTERVAL_SECONDS: 30
           RAMP_UP_MIN: 0
       - run: mv summary.txt prom_summary.txt
       - name: Run k6 tempo test
