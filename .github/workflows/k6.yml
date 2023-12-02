@@ -101,5 +101,5 @@ jobs:
           cat tempo_summary.txt >> $GITHUB_STEP_SUMMARY
       - name: Pull Docker logs
         run: |
-         docker logs -f "${{ job.services.clickhouse.id }}"
-         docker logs -f "${{ job.services.qryn.id }}"
+         docker logs "${{ job.services.clickhouse.id }}"
+         docker logs "${{ job.services.qryn.id }}"
