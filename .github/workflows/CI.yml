@@ -9,10 +9,10 @@ on:
         description: 'ghcr.io/chdb-io/chdb-server'
         required: false
       clickhouse_tag:
-        description: 'latest'
+        description: 'chdb tag (latest)'
         required: false
       qryn_tag:
-        description: 'latest'
+        description: 'qryn tag (latest)'
         required: false
 
 jobs:
@@ -29,7 +29,7 @@ jobs:
         env:
           PORT: 8123
       qryn:
-        image: "metrico/qryn:${{ github.event.inputs.qryn_tag || 'latest' }}"
+        image: "ghcr.io/metrico/qryn:${{ github.event.inputs.qryn_tag || 'latest' }}"
         ports:
           - 3100:3100
         env:
