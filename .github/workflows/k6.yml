@@ -31,10 +31,6 @@ jobs:
           CLICKHOUSE_SERVER: clickhouse
           CLICKHOUSE_AUTH: "qryn:qryn"    
     steps:
-      - name: Pull Docker logs
-        run: |
-         docker logs -f "${{ job.services.clickhouse.id }}" &
-         docker logs -f "${{ job.services.qryn.id }}" &
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -47,6 +43,10 @@ jobs:
         run: |
           wget https://github.com/metrico/qryn-bench/releases/download/latest/k6
           chmod +x k6
+      - name: Download k6 for Prometheus
+        run: |
+          wget https://github.com/metrico/qryn-bench/releases/download/latest/k6-tracing -O k6-tracing
+          chmod +x k6-tracing
       - name: Run k6 loki test
         run: ./k6 run --out csv=results.csv loki/qryn-loki-loadtest.js
         env:
@@ -65,7 +65,7 @@ jobs:
           RAMP_UP_MIN: 0
       - run: mv summary.txt prom_summary.txt
       - name: Run k6 tempo test
-        run: ./k6 run --out csv=results.csv tempo/qryn-tempo-template.js
+        run: ./k6-tracing run --out csv=results.csv tempo/qryn-tempo-template.js
         env:
           K6_TEMPO_ENDPOINT: "http://localhost:3100"
           K6_VUS: 1
@@ -99,3 +99,7 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Tempo Test" >> $GITHUB_STEP_SUMMARY
           cat tempo_summary.txt >> $GITHUB_STEP_SUMMARY
+      - name: Pull Docker logs
+        run: |
+         docker logs -f "${{ job.services.clickhouse.id }}"
+         docker logs -f "${{ job.services.qryn.id }}"
