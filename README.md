@@ -2,7 +2,7 @@
 
 # qryn `+` chdb
 
-> The lightest, most portable and powerful observability combo ever
+> The lightest, most portable and powerful _all-in-one_ observability combo ever
 
 <br>
 
