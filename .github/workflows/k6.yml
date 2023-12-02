@@ -47,6 +47,12 @@ jobs:
         run: |
           wget https://github.com/metrico/qryn-bench/releases/download/latest/k6-tracing -O k6-tracing
           chmod +x k6-tracing
+      - name: Wait for API
+        uses: mydea/action-wait-for-api@v1
+        with:
+          url: "https://localhost:3100/loki/api/v1/label"
+          expected-response-field: "status"
+          expected-response-field-value: "success"
       - name: Run k6 loki test
         run: ./k6 run --out csv=results.csv loki/qryn-loki-loadtest.js
         env:
