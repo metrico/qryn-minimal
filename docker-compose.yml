@@ -1,4 +1,4 @@
-version: '2.1'
+version: '3'
 
 volumes:
     chdb_data: {}
@@ -12,7 +12,12 @@ services:
     expose:
       - 8123
     volumes:
-      - .chdb_data:/app/.chdb_data
+      - chdb_data:/app/.chdb_data
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 500M
 
   qryn:
     image: qxip/qryn:latest
@@ -26,7 +31,6 @@ services:
       - CLICKHOUSE_SERVER=chdb-server
       - CLICKHOUSE_AUTH="qryn:demo"
       - CLICKHOUSE_PORT=8123
-      - LOG_LEVEL=debug
       - NODE_OPTIONS="--max-old-space-size=4096"
     depends_on:
        - chdb-server
