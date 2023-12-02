@@ -5,11 +5,11 @@ name: QRYN+CHDB CI
 on:
   workflow_dispatch:
     inputs:
-      clickhouse_tag:
-        description: 'Tag for chdb-server (latest)'
-        required: false
       clickhouse_image:
-        description: 'Image for chdb-server (chdb-io/chdb-server)'
+        description: 'ghcr.io/chdb-io/chdb-server'
+        required: false
+      clickhouse_tag:
+        description: 'latest'
         required: false
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
         node-version: [20]
     services:
       clickhouse:
-        image: "${{ github.event.inputs.clickhouse_image || 'chdb-io/chdb-server' }}:${{ github.event.inputs.clickhouse_tag || 'latest' }}"
+        image: "${{ github.event.inputs.clickhouse_image || 'ghcr.io/chdb-io/chdb-server' }}:${{ github.event.inputs.clickhouse_tag || 'latest' }}"
         ports:
           - 8123:8123
     steps:
