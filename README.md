@@ -8,7 +8,7 @@
 
 ### ⭐ Ingredients
 - **qryn**: _polyglot, lighweight, multi-standard drop-in observability framework for Logs, Metrics and Traces_
-- **cowsdb**: _embedded SQL OLAP Engine for serverless functions powered by and compatible with ClickHouse_
+- **cowsdb**: _embedded SQL OLAP Engine for serverless functions API compatible with ClickHouse_
 
 
 <br>
