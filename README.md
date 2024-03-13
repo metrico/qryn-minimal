@@ -1,6 +1,6 @@
 <img src="https://user-images.githubusercontent.com/1423657/218816262-e0e8d7ad-44d0-4a7d-9497-0d383ed78b83.png" width=180>
 
-# qryn `+` chdb
+# qryn `+` cowsdb
 
 > The lightest, most portable and powerful _all-in-one_ observability combo ever
 
@@ -8,7 +8,7 @@
 
 ### ⭐ Ingredients
 - **qryn**: _polyglot, lighweight, multi-standard drop-in observability framework for Logs, Metrics and Traces_
-- **chdb**: _embedded SQL OLAP Engine for serverless functions powered by and compatible with ClickHouse_
+- **cowsdb**: _embedded SQL OLAP Engine for serverless functions powered by and compatible with ClickHouse_
 
 
 <br>
