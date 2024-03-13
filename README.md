@@ -26,7 +26,7 @@ docker compose up -d
 | app | port |
 |---|---|
 | qryn | 3100 |
-| chdb | 8123 |
+| cowsdb | 8123 |
 
 <br>
 
