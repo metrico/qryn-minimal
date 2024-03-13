@@ -1,18 +1,18 @@
 version: '3'
 
 volumes:
-    chdb_data: {}
+    cowsdb_data: {}
 
 services:
 
-  chdb-server:
-    image: ghcr.io/chdb-io/chdb-server:latest
-    container_name: chdb-server
+  cowsdb-server:
+    image: ghcr.io/cowsdb/cowsdb:latest
+    container_name: cowsdb-server
     restart: unless-stopped
     expose:
       - 8123
     volumes:
-      - chdb_data:/app/.chdb_data
+      - cowsdb_data:/app/.chdb_data
     environment:
       - PORT=8123
     deploy:
@@ -23,16 +23,16 @@ services:
 
   qryn:
     image: qxip/qryn:latest
-    container_name: qryn-chdb
+    container_name: qryn-cowsdb
     restart: unless-stopped
     expose:
       - 3100
     ports:
       - "3100:3100"
     environment:
-      - CLICKHOUSE_SERVER=chdb-server
+      - CLICKHOUSE_SERVER=cowsdb-server
       - CLICKHOUSE_AUTH="qryn:demo"
       - CLICKHOUSE_PORT=8123
       - NODE_OPTIONS="--max-old-space-size=4096"
     depends_on:
-       - chdb-server
+       - cowsdb-server
