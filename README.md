@@ -44,7 +44,7 @@ docker compose up -d
 
 #### 🔎 Test
 - Ingest a sample log line using `curl`
-```
+```bash
 curl -i -XPOST -H "Content-Type: application/json" http://localhost:3100/loki/api/v1/push \
   --data '{"streams":[{"stream":{"type":"test"},"values":[['$(date +"%s%N")', "hello qryn"]]}]}'
 ```
