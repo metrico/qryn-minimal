@@ -8,11 +8,11 @@
 
 ### ⭐ Features
 Drop-in compatible ingestion and query APIs with polyglot features:
-- **Loki** API + **LogQL**
-- **Prometheus** API + **PromQL**
-- **Tempo** API + **TempoQL**
-- **Pyroscope** API
-- **Polyglot Ingestion** compatible with _Elastic, Datadog, InfluxDB and more_
+- **Loki** API + **LogQL** 👁️ [logs](https://qryn.metrico.in/#/logs/ingestion)
+- **Prometheus** API + **PromQL** 👁️ [metrics](https://qryn.metrico.in/#/metrics/ingestion)
+- **Tempo** API + **TempoQL** 👁️ [traces](https://qryn.metrico.in/#/metrics/ingestion)
+- **Pyroscope** API 👁️ [profiling](https://qryn.metrico.in/#/profiling/ingestion)
+- **Polyglot Ingestion** compatible with _[Elastic, Datadog, InfluxDB](https://qryn.metrico.in/#/support) and more_ 
 
 <br>
 
