@@ -12,7 +12,7 @@ Drop-in compatible ingestion and query APIs with polyglot features:
 - **Prometheus** API + **PromQL**
 - **Tempo** API + **TempoQL**
 - **Pyroscope** API
-- **Ingestion** APIs for Elastic, Datadog, InfluxDB, etc
+  **Polyglot Ingestion** compatible with _Elastic, Datadog, InfluxDB and more_
 
 <br>
 
