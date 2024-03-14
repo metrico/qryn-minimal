@@ -2,13 +2,20 @@
 
 # qryn-minimal
 
-> The lightest, most portable and powerful _all-in-one_ observability combo ever. Snap-on and use. 
+> The lightest, most portable and powerful _all-in-one_ observability combo ever made.
 
 <br>
 
+### ⭐ Features
+[qryn](https://qryn.dev) provides drop-in _ingestion and query_ compatibility with:
+- **Loki** API + **LogQL**
+- **Prometheus** API + **PromQL**
+- **Tempo** API + **TempoQL**
+- **Pyroscope** API
+
 ### ⭐ Ingredients
-- **qryn**: _polyglot, lighweight, multi-standard drop-in observability framework for Logs, Metrics and Traces_
-- **cowsdb**: _embedded SQL OLAP Engine for serverless functions API compatible with ClickHouse_
+- **[qryn](https://github.com/metrico/qryn)**: _polyglot, lighweight, multi-standard drop-in observability framework for Logs, Metrics and Traces_
+- **[qryn](https://github.com/cowsdb/cowsdb)**: _local embedded SQL OLAP Engine for serverless functions API compatible with ClickHouse_
 
 
 <br>
@@ -17,7 +24,7 @@
 
 ##### ⚠️ This bundle is experimental and will use up all the reosources you feed it. Proceed from the bottom up.
 
-Spin up qryn w/ chdb storage using `docker compose`
+Spin up qryn-minimal w/ onboard storage using `docker compose`
 ```
 docker compose pull
 docker compose up -d
@@ -39,4 +46,4 @@ curl -i -XPOST -H "Content-Type: application/json" http://localhost:3100/loki/ap
 
 Find your test log using `qryn-view`
 
-<img src="https://github.com/metrico/qryn-chdb/assets/1423657/d05e0442-08de-486c-85de-e3d69b87716c" width=400 >
+<img src="https://github.com/metrico/qryn-minimal/assets/1423657/d05e0442-08de-486c-85de-e3d69b87716c" width=400 >
