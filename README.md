@@ -22,8 +22,8 @@ Drop-in compatible ingestion and query APIs with polyglot features:
 
 
 ### ⚠️ Warning
-This bundle is experimental and designed for minimal single node setups with local storage.<br>
-For full sized deployments please refer to the complete [qryn-demo](https://github.com/metrico/qryn-oss-demo)
+> This bundle is designed for minimal single node setups with local storage only.<br>
+> For full sized deployments please refer to the complete [qryn-demo](https://github.com/metrico/qryn-oss-demo)
 
 <br>
 
