@@ -41,12 +41,14 @@ docker compose up -d
 <br>
 
 ### 🔎 Test
-Ingest a sample log line using `curl`
+- Ingest a sample log line using `curl`
 ```
 curl -i -XPOST -H "Content-Type: application/json" http://localhost:3100/loki/api/v1/push \
   --data '{"streams":[{"stream":{"type":"test"},"values":[['$(date +"%s%N")', "hello qryn"]]}]}'
 ```
 
-Find your test log using `qryn-view`
+- Browse to `http://localhost:3100` and find your test log using the `qryn-view` interface
 
 <img src="https://github.com/metrico/qryn-minimal/assets/1423657/d05e0442-08de-486c-85de-e3d69b87716c" width=400 >
+
+- Follow the [qryn instructions](https://qryn.metrico.in/#/) to ingest your Logs, Metrics and traces
