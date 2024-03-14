@@ -22,7 +22,7 @@
 
 ### 👉 Launch
 
-##### ⚠️ This bundle is experimental and will use up all the reosources you feed it. Proceed from the bottom up.
+##### ⚠️ This bundle is experimental and only suitable for minimal single nodes and local storage.
 
 Spin up qryn-minimal w/ onboard storage using `docker compose`
 ```
