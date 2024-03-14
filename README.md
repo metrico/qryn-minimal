@@ -20,8 +20,9 @@ Drop-in compatible ingestion and query APIs with polyglot features:
 - **[qryn](https://github.com/metrico/qryn)**: _polyglot, lighweight, multi-standard drop-in observability framework for Logs, Metrics and Traces_
 - **[cowsdb](https://github.com/cowsdb/cowsdb)**: _local embedded SQL OLAP Engine for serverless functions API compatible with ClickHouse_
 
+<br>
 
-### ⚠️ Warning
+#### ⚠️ Warning
 > This bundle is designed for minimal single node setups with local storage only.<br>
 > For full sized deployments please refer to the complete [qryn-demo](https://github.com/metrico/qryn-oss-demo)
 
