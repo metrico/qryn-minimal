@@ -50,4 +50,5 @@ curl -i -XPOST -H "Content-Type: application/json" http://localhost:3100/loki/ap
 
 <img src="https://github.com/metrico/qryn-minimal/assets/1423657/d05e0442-08de-486c-85de-e3d69b87716c" width=400 >
 
-- Follow the [qryn instructions](https://qryn.metrico.in/#/) to ingest your Logs, Metrics and traces
+- Follow the [qryn instructions](https://qryn.metrico.in/#/) to ingest any of your **Logs, Metrics and Traces**
+- Add **Grafana** using the native _Loki, Prometheus and Tempo datasources_ with **qryn** APIs
