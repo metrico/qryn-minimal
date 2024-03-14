@@ -1,8 +1,8 @@
 <img src="https://user-images.githubusercontent.com/1423657/218816262-e0e8d7ad-44d0-4a7d-9497-0d383ed78b83.png" width=180>
 
-# qryn `+` cowsdb
+# qryn-minimal
 
-> The lightest, most portable and powerful _all-in-one_ observability combo ever
+> The lightest, most portable and powerful _all-in-one_ observability combo ever. Snap-on and use. 
 
 <br>
 
