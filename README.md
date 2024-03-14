@@ -7,11 +7,12 @@
 <br>
 
 ### ⭐ Features
-[qryn](https://qryn.dev) provides drop-in _ingestion and query_ compatibility with:
+Drop-in compatible ingestion and query APIs with polyglot features:
 - **Loki** API + **LogQL**
 - **Prometheus** API + **PromQL**
 - **Tempo** API + **TempoQL**
 - **Pyroscope** API
+- **Ingestion** APIs for Elastic, Datadog, InfluxDB, etc
 
 ### ⭐ Ingredients
 - **[qryn](https://github.com/metrico/qryn)**: _polyglot, lighweight, multi-standard drop-in observability framework for Logs, Metrics and Traces_
