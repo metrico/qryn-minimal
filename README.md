@@ -2,7 +2,7 @@
 
 # qryn-minimal
 
-> The lightest, most portable and powerful _all-in-one_ observability combo ever made.
+> The lightest, most portable and powerful _all-in-one_ observability combo ever, now with embedded storage
 
 <br>
 
