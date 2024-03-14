@@ -21,11 +21,13 @@ Drop-in compatible ingestion and query APIs with polyglot features:
 - **[cowsdb](https://github.com/cowsdb/cowsdb)**: _local embedded SQL OLAP Engine for serverless functions API compatible with ClickHouse_
 
 
+### ⚠️ Warning
+This bundle is experimental and designed for minimal single node setups with local storage.<br>
+For full sized deployments please refer to the complete [qryn-demo](https://github.com/metrico/qryn-oss-demo)
+
 <br>
 
-### 👉 Launch
-
-##### ⚠️ This bundle is experimental and designed for minimal single node setups with local storage.
+#### 👉 Launch
 
 Spin up qryn-minimal w/ embedded database storage using `docker compose`
 ```
@@ -39,7 +41,7 @@ docker compose up -d
 
 <br>
 
-### 🔎 Test
+#### 🔎 Test
 - Ingest a sample log line using `curl`
 ```
 curl -i -XPOST -H "Content-Type: application/json" http://localhost:3100/loki/api/v1/push \
