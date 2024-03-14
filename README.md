@@ -25,9 +25,9 @@ Drop-in compatible ingestion and query APIs with polyglot features:
 
 ### 👉 Launch
 
-##### ⚠️ This bundle is experimental and only suitable for minimal single nodes and local storage.
+##### ⚠️ This bundle is experimental and designed for minimal single node setups with local storage.
 
-Spin up qryn-minimal w/ onboard storage using `docker compose`
+Spin up qryn-minimal w/ embedded database storage using `docker compose`
 ```
 docker compose pull
 docker compose up -d
