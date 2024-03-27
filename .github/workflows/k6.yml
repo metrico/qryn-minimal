@@ -9,7 +9,7 @@ on:
         description: 'BuildTag for ClickHouse (latest)'
         required: false
       clickhouse_image:
-        description: 'Image for ClickHouse (ghcr.io/chdb-io/chdb-server)'
+        description: 'Image for CowsDB (ghcr.io/cowsdb/cowsdb)'
         required: false
 
 jobs:
@@ -18,11 +18,11 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     env:
-      CLICKHOUSE_VERSION: "${{ github.event.inputs.clickhouse_image || 'ghcr.io/chdb-io/chdb-server' }}:${{ github.event.inputs.qryn_tag || 'latest' }}"
-      QRYN_VERSION: "ghcr.io/metrico/qryn:${{ github.event.inputs.clickhouse_tag || 'latest' }}"
+      CLICKHOUSE_VERSION: "${{ github.event.inputs.clickhouse_image || 'ghcr.io/cowsdb/cowsdb' }}:${{ github.event.inputs.clickhouse_tag || 'latest' }}"
+      QRYN_VERSION: "ghcr.io/metrico/qryn:${{ github.event.inputs.qryn_tag || 'latest' }}"
     services:
       clickhouse:
-        image: "${{ github.event.inputs.clickhouse_image || 'ghcr.io/chdb-io/chdb-server' }}:${{ github.event.inputs.clickhouse_tag || 'latest' }}"
+        image: "${{ github.event.inputs.clickhouse_image || 'ghcr.io/cowsdb/cowsdb' }}:${{ github.event.inputs.clickhouse_tag || 'latest' }}"
         ports:
           - 8123:8123
         env:
@@ -115,8 +115,8 @@ jobs:
           echo "### qryn image" >> $GITHUB_STEP_SUMMARY
           echo "qxip/qryn:${{ github.event.inputs.qryn_tag || 'latest' }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### chdb image" >> $GITHUB_STEP_SUMMARY
-          echo "${{ github.event.inputs.clickhouse_image || 'ghcr.io/chdb-io/chdb-server' }}:${{ github.event.inputs.clickhouse_tag || 'latest' }}" >> $GITHUB_STEP_SUMMARY
+          echo "### cowsdb image" >> $GITHUB_STEP_SUMMARY
+          echo "${{ github.event.inputs.clickhouse_image || 'ghcr.io/cowsdb/cowsdb' }}:${{ github.event.inputs.clickhouse_tag || 'latest' }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Loki Test" >> $GITHUB_STEP_SUMMARY
           cat loki_summary.txt >> $GITHUB_STEP_SUMMARY
