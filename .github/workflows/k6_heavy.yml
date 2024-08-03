@@ -86,7 +86,7 @@ jobs:
           K6_READ_REQUEST_RATE: 5
           K6_DURATION_MIN: 5
           K6_SCRAPE_INTERVAL_SECONDS: 15
-          RAMP_UP_MIN: 1
+          RAMP_UP_MIN: 0
       - run: mv summary.txt prom_summary.txt
         if: always()
       - name: Wait for Tempo API
