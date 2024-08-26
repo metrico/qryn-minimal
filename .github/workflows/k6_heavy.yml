@@ -94,7 +94,7 @@ jobs:
         env:
           K6_WRITE_HOSTNAME: "localhost:3100"
           K6_READ_HOSTNAME: "localhost:3100"
-          K6_WRITE_REQUEST_RATE: 2
+          K6_WRITE_REQUEST_RATE: 1
           K6_WRITE_SERIES_PER_REQUEST: 10
           K6_READ_REQUEST_RATE: 2
           K6_DURATION_MIN: 4
